@@ -1,0 +1,90 @@
+<!-- STRAT NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" (window:scroll)="windowScroll()"
+  id="navbar">
+  <div class="container">
+    <!-- LOGO -->
+    <a class="navbar-brand logo text-uppercase" href="/">
+      Dorsin
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <i class="mdi mdi-menu"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav navbar-center" id="mySidenav">
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
+          <a href="javascript: void(0);" class="nav-link" (click)="onClickScroll('home')">Home</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'services'}">
+          <a href="javascript: void(0);" class="nav-link" (click)="onClickScroll('services')">Services</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'features'}">
+          <a href="javascript: void(0);" class="nav-link" (click)="onClickScroll('features')">Features</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'pricing'}">
+          <a href="javascript: void(0);" class="nav-link" (click)="onClickScroll('pricing')">Pricing</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'team'}">
+          <a href="javascript: void(0);" class="nav-link" (click)="onClickScroll('team')">Team</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'blog'}">
+          <a href="javascript: void(0);" class="nav-link" (click)="onClickScroll('blog')">Blog</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'contact'}">
+          <a href="javascript: void(0);" class="nav-link" (click)="onClickScroll('contact')">Contact</a>
+        </li>
+      </ul>
+      <div class="nav-button ms-auto">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <button type="button" class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light" (click)="gotoLogin()">Login</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- END NAVBAR -->
+<!--START HOME-->
+<section class="section bg-home home-half" id="home" data-image-src="images/bg-home.jpg">
+  <div class="bg-overlay"></div>
+  <div class="display-table">
+    <div class="display-table-cell">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2 text-white text-center">
+            <h1 class="home-title">We help startups launch their products</h1>
+            <p class="pt-3 home-desc">Etiam sed.Interdum consequat proin vestibulum class at.</p>
+            <p class="play-shadow mt-4">
+              <a class="play-btn video-play-icon" (click)="openModal(content)"><i
+                  class="mdi mdi-play text-center"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-pattern-effect">
+    <img src="assets/images/bg-pattern.png" alt="" />
+  </div>
+</section>
+
+<ng-template #content let-modal>
+  <div class="modal-content home-modal">
+    <div class="modal-header border-0">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+        (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <video id="VisaChipCardVideo" class="video-box" controls>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+  </div>
+</ng-template>
+
+<app-services></app-services>
+<app-features></app-features>
+<app-pricing></app-pricing>
+<app-team></app-team>
+<app-blog></app-blog>
+<app-contact></app-contact>
+<app-footer></app-footer>
